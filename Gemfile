@@ -67,3 +67,5 @@ gem 'kaminari'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "paranoia"
+gem "rails-i18n"
+gem "ransack"
