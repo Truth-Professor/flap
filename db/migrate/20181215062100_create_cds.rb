@@ -9,8 +9,7 @@ class CreateCds < ActiveRecord::Migration[5.2]
       t.integer :genre_id
       t.integer :price
       t.integer :stock
-      t.integer :recommended
-      end
+      t.integer :recommendedgit
 
       t.timestamps
     end
