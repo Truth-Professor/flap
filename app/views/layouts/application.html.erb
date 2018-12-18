@@ -9,7 +9,58 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+
+<header>
+  <div>
+    <nav>
+      <h2>Flap</h2>
+    </nav>
+
+    <nav>
+      <ul>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "My Page", users_path %>
+        </li>
+        <li>
+          <%= link_to "Genre", destroy_user_session_path %>
+        </li>
+        <li>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        </li>
+
+        <% else %>
+
+        <li>Genre</li>
+        <li>
+          <%= link_to " Sign up", new_user_registration_path　%>
+        </li>
+        <li>
+          <%= link_to " Login", new_user_session_path %>
+        </li>
+
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<body>
+  <%= yield %>
+</body>
+
+<footer>
+  <div>
+    <div>
+      <div>
+        <ul>
+          <li>概要</li>
+          <li>退会</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </html>
+
