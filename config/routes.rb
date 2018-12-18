@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
 
 namespace :admins do
+  get '/cds/top' => 'cds#top'
 
   resources :users, only: [:index, :show, :history, :edit, :update, :destroy]
 
