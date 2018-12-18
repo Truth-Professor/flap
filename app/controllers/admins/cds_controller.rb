@@ -1,6 +1,7 @@
 class Admins::CdsController < ApplicationController
 
 	def top
+		@cd = Cd.new
 
 	end
 
