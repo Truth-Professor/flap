@@ -1,4 +1,5 @@
 class Admins::CdsController < ApplicationController
+ layout 'admin'
 
 	def top
 		@cd = Cd.new
