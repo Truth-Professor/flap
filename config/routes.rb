@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :orders, only: [:show, :create]
 
 
-
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -35,7 +34,7 @@ namespace :admins do
   get '/cds/top' => 'cds#top'
   post '/cds/top' => 'cds#create'
 
-  resources :users, only: [:index, :show, :history, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :history, :edit, :update]
 
   resources :cds, only: [:top, :index, :show, :edit, :create, :update, :destroy]
 
