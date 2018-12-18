@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root :to => 'cds#top'
 
+  get '/index_genre' => 'cds#index_genre'
+
+  get '/history' => 'users#history'
 
   resources :users, only: [:index, :history, :edit, :update, :destroy]
 
