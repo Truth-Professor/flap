@@ -1,4 +1,5 @@
 class Admins::UsersController < ApplicationController
+	layout 'admin'
 
 	def index
 

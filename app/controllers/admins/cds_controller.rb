@@ -19,6 +19,12 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def create
+  # ストロングパラメーターを使用
+         @cd = Cd.new(cd_params)
+        # DBへ保存する
+         @cd.save
+        # 管理トップ画面へリダイレクト
+        redirect_to admins_cds_top_path
 
 	end
 
@@ -29,4 +35,17 @@ class Admins::CdsController < ApplicationController
 	def destroy
 
 	end
+	private
+    def cd_params
+        params.require(:cd).permit(:cd_title,
+        	                       :jacket_image_id,
+        	                       :disc,
+        	                       :artist_id,
+        	                       :label_id,
+        	                       :genre_id,
+        	                       :price,
+        	                       :stick,
+        )
+    end
+
 end

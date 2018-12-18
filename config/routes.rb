@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
   root :to => 'cds#top'
 
-  get '/index_genre' => 'cds#index_genre'
-
-  get '/history' => 'users#history'
 
   resources :users, only: [:index, :history, :edit, :update, :destroy]
 
@@ -36,6 +33,7 @@ Rails.application.routes.draw do
 
 namespace :admins do
   get '/cds/top' => 'cds#top'
+  post '/cds/top' => 'cds#create'
 
   resources :users, only: [:index, :show, :history, :edit, :update, :destroy]
 
