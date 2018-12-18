@@ -1,7 +1,7 @@
 
 
 <h1>ユーザー設定</h1>
-<%= form_for(@user) do |f| %>
+<%= form_for(current_user) do |f| %>
 	<p>名前</p>
 	<%= f.text_field :name_kanji, class: "name_kanji" %>
 
@@ -21,6 +21,6 @@
 
 <p><%= f.submit '保存' %></p>
 
-<p><%= link_to "戻る", users_path(@user.id) %></p>
+<p><%= link_to "戻る", users_path(current_user) %></p>
 
 <% end %>
