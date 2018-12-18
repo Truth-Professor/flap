@@ -7,6 +7,7 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def index
+		@cd = Cd.all
 
 	end
 

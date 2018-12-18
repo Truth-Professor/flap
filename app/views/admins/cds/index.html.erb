@@ -1,1 +1,5 @@
 <h1> 商品一覧 </h1>
+<% @cd.each do |cd| %>
+    <p>タイトル</p>
+    <span><%= cd.cd_title %></span>
+ <% end %>
