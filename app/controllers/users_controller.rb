@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+
   def index
+    @user = current_user
   end
 
   def history
@@ -13,4 +15,5 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
 end

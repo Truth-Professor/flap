@@ -1,17 +1,68 @@
-<header> 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flap</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-t
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
 
+<header>
+  <div>
+    <nav>
+      <h2>Flap</h2>
+    </nav>
 
+    <nav>
+      <ul>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "My Page", users_path(current_user.id)  %>
+        </li>
+        <li>
+          <%= link_to "Genre", index_genre_path %>
+        </li>
+        <li>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+      <p><%= current_user.name_kanji %></p>
 
+      <% else %>
+      <ul>
+        <li>Genre</li>
+        <li>
+          <%= link_to " Sign up", new_user_registration_path　%>
+        </li>
+        <li>
+          <%= link_to " Login", new_user_session_path %>
+        </li>
 
+      </ul>
+      <% end %>
+    </ul>
+  </nav>
+</div>
+</header>
 
-
-
-
-</header> 
 <body>
-
-<%= yield %>
+  <%= yield %>
 </body>
+
+<footer>
+      <div>
+        <h4>会社概要</h4>
+        <ul>
+          <li>社名</li>
+          <li>住所</li>
+          <li>メールアドレス</li>
+          <li>電話番号</li>
+        </ul>
+        <p>退会</p>
+      </div>
+</footer>
+
+</html>
