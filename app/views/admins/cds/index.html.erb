@@ -1,1 +1,8 @@
 <h1> 商品一覧 </h1>
+<% @cd.each do |cd| %>
+    <p>タイトル</p>
+    <span>
+    	<%= link_to cd.cd_title, cd_path(cd.id) %>
+    </span>
+
+ <% end %>

@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 namespace :admins do
   get '/cds/top' => 'cds#top'
   post '/cds/top' => 'cds#create'
+  get '/cds/index' => 'cds#index'
+  get '/cds/:id' => 'cds#show', as: 'cd'
 
   resources :users, only: [:index, :show, :history, :edit, :update]
 
