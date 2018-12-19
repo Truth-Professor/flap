@@ -2,10 +2,6 @@
 	<h2>マイページ</h2>
 	<ul>
 		<li><%= current_user.name_kanji %></li>
-		<li><%= current_user.email %></li>
-		<li><%= current_user.postal_code %></li>
-		<li><%= current_user.address %></li>
-		<li><%= current_user.phone_number %></li>
 	</ul>
 	<p><%= link_to "ユーザー設定", edit_user_path(current_user) %></p>
     <p><%= link_to "購入履歴", history_path(current_user) %></p>

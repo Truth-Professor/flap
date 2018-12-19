@@ -20,7 +20,7 @@
      <ul>
       <% if user_signed_in? %>
        <li>
-         <%= link_to "My Page", users_path(current_user)  %>
+         <%= link_to "My Page", user_path(current_user)  %>
        </li>
        <li>
          <%= link_to "Genre", index_genre_path %>
@@ -28,8 +28,13 @@
        <li>
          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
        </li>
+
+       <P><%= link_to "Cart", carts_path %></P>
+
        <p><%= current_user.name_kanji %></p>
+
        <% else %>
+
        <li>
           <%= link_to " sign up", new_user_registration_path %>
         </li>

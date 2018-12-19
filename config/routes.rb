@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'index_genre' => 'cds#index_genre'
 
-  resources :users, only: [:index, :edit, :update, :destroy]
+
 
   resources :cds, only: [:top, :index, :index_genre, :show, :update]
 
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
 }
 
-
+resources :users, only: [:index, :show, :edit, :create, :update]
 
 namespace :admins do
   get '/cds/top' => 'cds#top'

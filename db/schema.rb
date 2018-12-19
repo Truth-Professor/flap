@@ -128,12 +128,12 @@ ActiveRecord::Schema.define(version: 2018_12_18_124434) do
     t.string "name_kanji", null: false
     t.string "name_kana", null: false
     t.string "address", null: false
+    t.string "phone_number", null: false
     t.datetime "deleted_at"
     t.string "postal_code", null: false
     t.text "profile_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

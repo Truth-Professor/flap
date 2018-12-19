@@ -2,6 +2,12 @@
 
 <h1>ユーザー設定</h1>
 <%= form_for(current_user) do |f| %>
+
+　　　<div>
+		<%= f.attachment_field :profile_image, class: "user_image" %>
+　　　</div>
+
+
 	<p>名前</p>
 	<%= f.text_field :name_kanji, class: "name_kanji" %>
 
