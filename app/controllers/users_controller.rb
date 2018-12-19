@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+before_action :authenticate_user!
+
   def index
   end
 
@@ -9,6 +11,8 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def create
+  end
 
   def update
     user = User.find(params[:id])
