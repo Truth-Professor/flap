@@ -1,23 +1,28 @@
 class UsersController < ApplicationController
 
+before_action :authenticate_user!
+
   def index
-    @user = User.find_by(params[:id])
   end
 
   def history
   end
 
   def edit
-    @user = User.find_by(params[:id])
+  end
+
+  def create
   end
 
   def update
-    user = User.find_by(params[:id])
+    user = User.find(params[:id])
     user.update(user_params)
     redirect_to users_path(current_user.id)
   end
 
   def destroy
+    current_user.delete
+    redirect_to root_path
   end
 
 private
