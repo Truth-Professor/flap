@@ -5,7 +5,8 @@ before_action :authenticate_user!
   def index
   end
 
-  def history
+  def show
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -17,18 +18,17 @@ before_action :authenticate_user!
   def update
     user = User.find(params[:id])
     user.update(user_params)
-    redirect_to users_path(current_user.id)
+    redirect_to user_path(current_user.id)
   end
 
-  def destroy
-    current_user.delete
-    redirect_to root_path
+  def history
   end
+
 
 private
 
   def user_params
-    params.require(:user).permit(:name_kanji, :name_kana, :email, :postal_code, :address, :phone_number)
+    params.require(:user).permit(:name_kanji, :name_kana, :email, :postal_code, :address, :phone_number, :profile_image)
   end
 
 end
