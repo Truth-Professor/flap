@@ -12,6 +12,7 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def show
+		@cd = Cd.find(paramas[:id])
 
 	end
 
