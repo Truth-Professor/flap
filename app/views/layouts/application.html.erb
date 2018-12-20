@@ -52,7 +52,7 @@
 </body>
 
 <footer>
-     <div>
+  <% if user_signed_in? %>
        <h4>会社概要</h4>
        <ul>
          <li>社名</li>
@@ -60,8 +60,17 @@
          <li>メールアドレス</li>
          <li>電話番号</li>
        </ul>
-       <p>退会</p>
-     </div>
+       <%= button_to "退会", user_registration_path, method: :delete %>
+       </li>
+       <% else %>
+       <h4>会社概要</h4>
+       <ul>
+         <li>社名</li>
+         <li>住所</li>
+         <li>メールアドレス</li>
+         <li>電話番号</li>
+       </ul>
+     <% end %>
 </footer>
 
 </html>
