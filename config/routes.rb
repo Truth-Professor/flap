@@ -36,8 +36,9 @@ resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
 namespace :admins do
   get '/cds/top' => 'cds#top'
   post '/cds/top' => 'cds#create'
+  delete '/users' => 'users#destroy'
 
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
 
   resources :cds, only: [:index, :show, :edit, :create, :update, :destroy]
 

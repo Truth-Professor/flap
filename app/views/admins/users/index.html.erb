@@ -5,9 +5,6 @@
 			<th>ID</th>
 			<th>ユーザー名</th>
 			<th>メールアドレス</th>
-			<th>詳細</th>
-			<th>編集</th>
-			<th>消去</th>
 
 		</tr>
 	</thead>
@@ -20,6 +17,11 @@
 			<td><%=  %></td>
 			<td><%=  %></td>
 			<td><%=  %></td>
+            <td><%= link_to "詳細", admins_user_path(user.id) %></td>
+            <td><%= link_to "編集", edit_admins_user_path(user.id) %></td>
+            <td><%= link_to "削除", admins_user_path(user.id), method: :delete, data: { confirm: '削除しますか?' } %>
+
+            </td>
 
 		</tr>
 	 <% end %>
