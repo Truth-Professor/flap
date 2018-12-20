@@ -4,12 +4,15 @@
 	<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
 	<ul>
 		<li><%= @user.name_kanji %></li>
-		<li><%= @user.name_kanji %></li>
-
+		<li><%= @user.name_kana %></li>
 		<li><%= @user.email %></li>
 		<li><%= @user.postal_code %></li>
 		<li><%= @user.address %></li>
 		<li><%= @user.phone_number %></li>
 	</ul>
+
+<h2>購入履歴</h2>
+
+<p><%= link_to "戻る", admins_users_path %></p>
 
 </div>
