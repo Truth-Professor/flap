@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
 }
 
-resources :users, only: [:index, :show, :edit, :create, :update]
+resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
 
 namespace :admins do
   get '/cds/top' => 'cds#top'
