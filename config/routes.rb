@@ -36,12 +36,10 @@ resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
 namespace :admins do
   get '/cds/top' => 'cds#top'
   post '/cds/top' => 'cds#create'
-  get '/cds/index' => 'cds#index'
-  get '/cds/:id' => 'cds#show', as: 'cd'
 
-  resources :users, only: [:index, :show, :history, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
 
-  resources :cds, only: [:top, :index, :show, :edit, :create, :update, :destroy]
+  resources :cds, only: [:index, :show, :edit, :create, :update, :destroy]
 
 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
