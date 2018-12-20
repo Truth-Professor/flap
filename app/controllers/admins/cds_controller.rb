@@ -12,7 +12,7 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def show
-		@cd = Cd.find(paramas[:id])
+		@cd = Cd.find(params[:id])
 
 	end
 
@@ -35,7 +35,9 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def destroy
-
+	    cd = Cd.find(params[:id])
+		cd.destroy
+		redirect_to admins_cds_top_path
 	end
 	private
     def cd_params
@@ -46,7 +48,7 @@ class Admins::CdsController < ApplicationController
         	                       :label_id,
         	                       :genre_id,
         	                       :price,
-        	                       :stick,
+        	                       :stock,
         )
     end
 
