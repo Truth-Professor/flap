@@ -2,7 +2,14 @@ class Admins::UsersController < ApplicationController
 	layout 'admin'
 
 	def index
-		@user = User.all
+		@users = User.all
+
+		@q = User.ransack(params[:q])
+        # @search = User.ransack(params[:q])
+        # @result = @search.result
+	end
+
+	def serch
 	end
 
 	def show
@@ -25,16 +32,10 @@ class Admins::UsersController < ApplicationController
 	end
 
 	def destroy
-		if admin_signed_in?
 		    user = User.find(params[:id])
 			user.destroy
 		    redirect_to admins_users_path
-		else
-		    redirect_to admins_users_path
-			
-		end
 	end
-
 
 	private
 
