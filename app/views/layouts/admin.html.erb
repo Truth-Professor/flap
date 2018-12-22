@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Flap</title>
+ <%= csrf_meta_tags %>
+ <%= csp_meta_tag %>
+
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
 <header>
 <li><%= link_to "Top", admins_cds_top_path %></li>
 <li><%= link_to "商品一覧", admins_cds_path %></li>
@@ -5,6 +18,7 @@
 <li><%= link_to "アーティスと登録", new_admins_artist_path %></li>
 
 <%= button_to "ログアウト", destroy_admin_session_path, method: :delete %>
+
 
 
 
