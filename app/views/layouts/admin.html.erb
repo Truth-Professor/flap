@@ -15,6 +15,7 @@
 <li><%= link_to "Top", admins_cds_top_path %></li>
 <li><%= link_to "商品一覧", admins_cds_path %></li>
 <li><%= link_to "ユーザー一覧", admins_users_path %></li>
+<li><%= link_to "アーティスと登録", new_admins_artist_path %></li>
 
 <%= button_to "ログアウト", destroy_admin_session_path, method: :delete %>
 
@@ -22,7 +23,9 @@
 
 
 
-</header> 
+
+</header>
+<body>
 
 <%= yield %>
 </body>

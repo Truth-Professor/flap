@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 root :to => 'cds#top'
 devise_for :admins, controllers: {
   sessions:      'admins/sessions',
@@ -28,5 +29,9 @@ end
 
   get 'history' => 'users#history'
   get 'index_genre' => 'cds#index_genre'
+
+  resources :artists, only: [:new, :create]
+  resources :genres, only: [:new, :create]
+
 
 end

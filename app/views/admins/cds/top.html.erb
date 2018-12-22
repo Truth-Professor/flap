@@ -1,10 +1,18 @@
 <h1> 商品の新規追加 </h1>
 <%= form_for (@cd), url: admins_cds_top_path do |f| %>
 
+<h4>画像</h4>
+ <%= f.attachment_field :profile_image %>
+
+
 <h4>タイトル</h4>
 <%= f.text_field :cd_title %>
+
+<h4>genre</h4>
+<%= f.collection_select :genre_id, Genre.all, :id, :cd_genre %>
+
 <h4>アーティスト</h4>
-<%= f.select :artist_id, [["嵐", "嵐"], ["嵐", "嵐"], ["嵐", "嵐"], ["嵐", "嵐"]]%>
+<%= f.collection_select :artist_id, Artist.all, :id, :artist_name %>
 <h4>値段</h4>
 <%= f.text_field :price %>
 <h4>レーベル名</h4>

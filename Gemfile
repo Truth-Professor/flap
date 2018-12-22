@@ -71,3 +71,5 @@ gem "rails-i18n"
 gem 'will_paginate'
 gem "ransack"
 
+
+gem 'pry-rails'
