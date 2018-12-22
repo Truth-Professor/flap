@@ -1,29 +1,55 @@
 <h1> ユーザー一覧</h1>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :name %>
+  <%= f.search_field :name_kanji_cont %>
+  <%= f.submit %>
+<% end %>
+
 <table>
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>ユーザー名</th>
-			<th>メールアドレス</th>
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :name_kanji) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name_kanji %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-		</tr>
-	</thead>
-	<tbody>
-	 <% @user.each do |user| %>
-		<tr>
-			<td><%= user.id %></td>
-			<td><%= user.name_kanji %></td>
-			<td><%= user.email %></td>
-			<td><%=  %></td>
-			<td><%=  %></td>
-			<td><%=  %></td>
-            <td><%= link_to "詳細", admins_user_path(user.id) %></td>
-            <td><%= link_to "編集", edit_admins_user_path(user.id) %></td>
-            <td><%= link_to "削除", admins_user_path(user.id), method: :delete, data: { confirm: '削除しますか?' } %>
 
-            </td>
 
-		</tr>
-	 <% end %>
-	</tbody>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ユーザー名</th>
+      <th>メールアドレス</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name_kanji %></td>
+      <td><%= user.email %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%=  %></td>
+      <td><%= link_to "詳細", admins_user_path(user.id) %></td>
+      <td><%= link_to "編集", edit_admins_user_path(user.id) %></td>
+      <td><%= link_to "削除", admins_user_path(user.id), method: :delete, data: { confirm: '削除しますか?' } %>
+
+      </td>
+
+    </tr>
+    <% end %>
+  </tbody>
 </table>
