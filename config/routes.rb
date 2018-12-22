@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   get 'history' => 'users#history'
 
-  get 'index_genre' => 'cds#index_genre'
 
 
-
-  resources :cds, only: [:top, :index, :index_genre, :show, :update]
+  resources :cds, only: [:top, :index, :index_genre, :show, :update]do
+    resource :genres, only: [:create, :destroy]
+  end
 
   resources :favorites, only: [:create, :destroy]
 
@@ -42,6 +42,12 @@ namespace :admins do
 
   resources :cds, only: [:index, :show, :edit, :create, :update, :destroy]
 
+  resources :artists, only: [:new, :create]
+  resources :genres, only: [:new, :create]
+
+
 end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

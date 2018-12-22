@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_124434) do
   end
 
   create_table "artists", force: :cascade do |t|
-    t.string "artist_nameß"
+    t.string "artist_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

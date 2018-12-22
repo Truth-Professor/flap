@@ -2,7 +2,11 @@
 <% @cd.each do |cd| %>
     <p>タイトル</p>
     <span>
+    	<%= link_to cd.id, admins_cd_path(cd.id) %>
     	<%= link_to cd.cd_title, admins_cd_path(cd.id) %>
+    	<%= link_to cd.stock, admins_cd_path(cd.id) %>
+
+
     </span>
 
  <% end %>
