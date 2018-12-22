@@ -1,0 +1,10 @@
+<h1>アーティスト登録 </h1>
+
+<%= form_for (@artist), url: admins_artists_path  do |a| %>
+
+<h4> 新規登録　</h4>
+<%= a.text_field :artist_name %>
+
+
+ <%= a.submit '投稿' %>
+<% end %>
