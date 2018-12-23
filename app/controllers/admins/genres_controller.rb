@@ -1,5 +1,5 @@
-class Admins::GenreController < ApplicationController
-	def new
+class Admins::GenresController < ApplicationController
+		def new
 		@genre = Genre.new
 	end
 
