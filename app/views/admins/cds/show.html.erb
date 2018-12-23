@@ -1,5 +1,14 @@
 <h1> CD詳細画面　</h1>
 
-<p> <%= @cd.cd_title %> </p>
-<%= link_to "編集", admins_cd_path(@cd.id) %>
-<%= button_to "削除", admins_cd_path(@cd.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<%= attachment_image_tag @cd, :jacket_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+	<ul>
+		<li><%= @cd.cd_title %></li>
+		<li><%= @cd.artist_id %></li>
+		<li><%= @cd.price %></li>
+		<li><%= @cd.label_id %></li>
+		<li><%= @cd.genre_id %></li>
+		<li><%= @cd.disc %></li>
+		<li><%= @cd.stock %></li>
+		<li><%= @cd.recommendedgit %></li>
+
+	</ul>

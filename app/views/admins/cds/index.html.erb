@@ -1,26 +1,38 @@
  <table>
-<h1> 商品一覧 </h1>
+
+ 	<h1> 商品一覧 </h1>
 
  	<thead>
  		<tr>
- 			<th>商品コード</th>
- 			<th>タイトル</th>
- 			<th>在庫数</th>
- 			<th>詳細</th>
- 			<th>編集</th>
- 			<th>消去</th>
+ 			<td>商品コード</td>
+ 			<td>タイトル</td>
+ 			<td>在庫数</td>
  		</tr>
  	</thead>
+
  	<tbody>
  		<% @cd.each do |cd| %>
  		<tr>
- 			<th><%= link_to cd.id, admins_cd_path(cd.id) %></th>
- 			<td><%= link_to cd.cd_title, admins_cd_path(cd.id) %></td>
- 			<th></th>
- 			<th>詳細</th>
- 			<th>編集</th>
- 			<th>消去</th>
+ 			<td>
+ 				<%= cd.id %>
+ 			</td>
+ 			<td>
+ 				<%= link_to cd.cd_title, admins_cd_path(cd.id) %>
+ 			</td>
+ 			<td>
+ 				<%= cd.stock %>
+ 			</td>
+ 			<td>
+ 				<%= link_to "詳細", admins_cd_path(cd.id) %>
+ 			</td>
+ 			<td>
+ 				<%= link_to "編集", edit_admins_cd_path(cd.id) %>
+ 			</td>
+ 			<td>
+ 				<%= link_to "削除", admins_cd_path(cd.id), method: :delete, data: { confirm: '削除しますか?' } %>
+ 			</td>
  		</tr>
  		<% end %>
  	</tbody>
+
  </table>

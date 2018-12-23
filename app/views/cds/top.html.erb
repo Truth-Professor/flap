@@ -1,51 +1,29 @@
-<h1>商品一覧</h1>
+<div>
+	<h1>商品一覧</h1>
 
-<h2>管理人のオススメ！</h2>
-
-
-<h2>CD一覧</h2>
-<table>
-	<thead>
-		<tr>
-		    <td>
-		    <td></td>
-		    <td>
-		        タイトル
-		    </td>
-		    <td>
-		       アーティスト
-		    </td>
-		    <td>
-		        値段
-		    </td>
-		    <td>
-		        在庫数
-		    </td>
-		</tr>
-	</thead>
+	<h2>管理人のオススメ！</h2>
 
 
+	<h2>CD一覧</h2>
 
+	<% @cd.each do |cd| %>
+	<p>
+		<%= link_to cd.cd_title, cds_path(cd.id) %>
+	</p>
+	<% end %>
 
-		<% @cd.each do |cd| %>
-		<tbody>
-		<tr>
-		    <td>
-		    </td>
-		    <td>
-		        <%= link_to cd.cd_title, cds_path(cd.id) %>
-		    </td>
-		    <td>
-		        <%= cd.artist.id%>
-		    </td>
-		    <td>
-		        <%= cd.price %>
-		    </td>
-		    <td>
-		        <%= cd.stock %>
-		    </td>
+	<% @artist.each do |artist| %>
+	<p>
+		<%= artist.artist_name %>
+	</p>
+	<% end %>
 
-		</tr>
-		<tbody>
-</table>
-<% end%>
+	<% @cd.each do |cd| %>
+	<p>
+		<%= cd.price %>
+	</p>
+	<p>
+		<%= cd.stock %>
+	</p>
+	<% end %>
+</div>
