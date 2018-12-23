@@ -2,15 +2,11 @@ class Admins::UsersController < ApplicationController
 	layout 'admin'
 
 	def index
-		@users = User.all
-
-		@q = User.ransack(params[:q])
-        # @search = User.ransack(params[:q])
-        # @result = @search.result
+		@users  = User.paginate(page: params[:page])
+        @search = User.ransack(params[:q])
+        @result = @search.result
 	end
 
-	def serch
-	end
 
 	def show
 		@user = User.find(params[:id])
