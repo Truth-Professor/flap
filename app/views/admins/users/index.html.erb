@@ -11,6 +11,15 @@
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
+<table>
+ <thead>
+    <tr>
+      <th>ID</th>
+      <th>ユーザー名</th>
+      <th>メールアドレス</th>
+    </tr>
+  </thead>
+
 <% if @result.any? %>
   <%= render @result %>
 <% end %>
@@ -20,6 +29,6 @@
     <%= render @users %>
   </ul>
 <% end %>
-
+</table>
 
 
