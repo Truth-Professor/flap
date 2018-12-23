@@ -24,6 +24,7 @@ class Admins::CdsController < ApplicationController
   # ストロングパラメーターを使用
          @cd = Cd.new(cd_params)
         # DBへ保存する
+        binding.pry
          @cd.save
         # 管理トップ画面へリダイレクト
         redirect_to admins_cds_top_path

@@ -1,0 +1,10 @@
+<h1>レーベル登録 </h1>
+
+<%= form_for (@label), url: admins_labels_path  do |d| %>
+
+<h4> 新規登録　</h4>
+<%= d.text_field :cd_label %>
+
+
+ <%= d.submit '投稿' %>
+<% end %>
