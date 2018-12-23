@@ -1,12 +1,26 @@
+ <table>
 <h1> 商品一覧 </h1>
-<% @cd.each do |cd| %>
-    <p>タイトル</p>
-    <span>
-    	<%= link_to cd.id, admins_cd_path(cd.id) %>
-    	<%= link_to cd.cd_title, admins_cd_path(cd.id) %>
-    	<%= link_to cd.stock, admins_cd_path(cd.id) %>
 
-
-    </span>
-
- <% end %>
+ 	<thead>
+ 		<tr>
+ 			<th>商品コード</th>
+ 			<th>タイトル</th>
+ 			<th>在庫数</th>
+ 			<th>詳細</th>
+ 			<th>編集</th>
+ 			<th>消去</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 		<% @cd.each do |cd| %>
+ 		<tr>
+ 			<th><%= link_to cd.id, admins_cd_path(cd.id) %></th>
+ 			<td><%= link_to cd.cd_title, admins_cd_path(cd.id) %></td>
+ 			<th></th>
+ 			<th>詳細</th>
+ 			<th>編集</th>
+ 			<th>消去</th>
+ 		</tr>
+ 		<% end %>
+ 	</tbody>
+ </table>

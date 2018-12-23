@@ -1,5 +1,6 @@
 class CdsController < ApplicationController
   def top
+    @cd = Cd.all
   end
 
   def index

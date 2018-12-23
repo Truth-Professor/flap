@@ -27,8 +27,7 @@ namespace :admins do
 
   resources :artists, only: [:new, :create]
   resources :genres, only: [:new, :create]
-  get '/cds/top' => 'cds#top'
-  post '/cds/top' => 'cds#create'
+
   # delete '/users' => 'users#destroy'
   resources :artists, only: [:new, :create]
   resources :genres, only: [:new, :create]

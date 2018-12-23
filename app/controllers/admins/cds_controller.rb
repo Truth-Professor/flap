@@ -17,6 +17,7 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def edit
+		@cd = Cd.find(params[:id])
 
 	end
 
@@ -24,7 +25,6 @@ class Admins::CdsController < ApplicationController
   # ストロングパラメーターを使用
          @cd = Cd.new(cd_params)
         # DBへ保存する
-        binding.pry
          @cd.save
         # 管理トップ画面へリダイレクト
         redirect_to admins_cds_top_path
@@ -32,6 +32,9 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def update
+		cd = Cd.find(params[:id])
+        cd.update(cd_params)
+        redirect_to admins_cds_path(cd.id)
 
 	end
 
@@ -43,7 +46,7 @@ class Admins::CdsController < ApplicationController
 	private
     def cd_params
         params.require(:cd).permit(:cd_title,
-        	                       :jacket_image_id,
+        	                       :jacket_image,
         	                       :disc,
         	                       :artist_id,
         	                       :label_id,
