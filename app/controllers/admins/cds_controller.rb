@@ -53,6 +53,7 @@ class Admins::CdsController < ApplicationController
         	                       :genre_id,
         	                       :price,
         	                       :stock,
+        	                       roomtypes_attributes: [:id,:cd_id,:song_title,:_destroy]
         )
     end
 
