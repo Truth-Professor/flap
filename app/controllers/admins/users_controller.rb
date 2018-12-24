@@ -14,7 +14,6 @@ class Admins::UsersController < ApplicationController
 	end
 
 	def history
-
 	end
 
 	def edit

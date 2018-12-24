@@ -7,13 +7,13 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def index
-		@cd = Cd.all
-
+		@cds  = Cd.paginate(page: params[:page])
+        @search = Cd.ransack(params[:q])
+        @result = @search.result
 	end
 
 	def show
 		@cd = Cd.find(params[:id])
-
 	end
 
 	def edit

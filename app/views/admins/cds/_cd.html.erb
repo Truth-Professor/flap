@@ -1,0 +1,25 @@
+
+<tbody>
+	<% @cds.first(1).each do %>
+	<tr>
+		<td>
+			<%= cd.id %>
+		</td>
+		<td>
+			<%= cd.cd_title %>
+		</td>
+		<td>
+			<%= cd.stock %>
+		</td>
+		<td>
+ 				<%= link_to "詳細", admins_cd_path(cd.id) %>
+ 			</td>
+ 			<td>
+ 				<%= link_to "編集", edit_admins_cd_path(cd.id) %>
+ 			</td>
+ 			<td>
+ 				<%= link_to "削除", admins_cd_path(cd.id), method: :delete, data: { confirm: '削除しますか?' } %>
+ 			</td>
+	</tr>
+	<% end %>
+</tbody>

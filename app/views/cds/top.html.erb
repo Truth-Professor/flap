@@ -6,24 +6,24 @@
 
 	<h2>CD一覧</h2>
 
-	<% @cd.each do |cd| %>
-	<p>
-		<%= link_to cd.cd_title, cds_path(cd.id) %>
-	</p>
-	<% end %>
-
-	<% @artist.each do |artist| %>
-	<p>
-		<%= artist.artist_name %>
-	</p>
-	<% end %>
 
 	<% @cd.each do |cd| %>
-	<p>
-		<%= cd.price %>
-	</p>
-	<p>
-		<%= cd.stock %>
-	</p>
+	<%= attachment_image_tag cd, :jacket_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+	<h4><%= cd.recommendedgit %></h4>
+	<ul>
+		<li>
+			<%= link_to cd.cd_title, cd_path(cd.id) %>
+		</li>
+		<li>
+			<%= cd.artist.artist_name %>
+		</li>
+		<li>
+			<%= cd.price %>円
+		</li>
+		<li>
+			<%= cd.stock %>個
+		</li>
+	</ul>
 	<% end %>
+
 </div>
