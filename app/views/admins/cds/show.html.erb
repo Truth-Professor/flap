@@ -1,14 +1,42 @@
 <h1> CD詳細画面　</h1>
 
 <%= attachment_image_tag @cd, :jacket_image, :fill, 100, 100, fallback: "no_image.jpg" %>
-	<ul>
-		<li><%= @cd.cd_title %></li>
-		<li><%= @cd.artist_id %></li>
-		<li><%= @cd.price %></li>
-		<li><%= @cd.label_id %></li>
-		<li><%= @cd.genre_id %></li>
-		<li><%= @cd.disc %></li>
-		<li><%= @cd.stock %></li>
-		<li><%= @cd.recommendedgit %></li>
+<table>
+	<tr>
+		<td>タイトル</td>
+		<td><%= @cd.cd_title %></td>
+	</tr>
+	<tr>
+		<td>アーティスト</td>
+		<td><%= @cd.artist.artist_name %></td>
+	</tr>
+	<tr>
+		<td>値段</td>
+		<td><%= @cd.price %></td>
+	</tr>
+	<tr>
+		<td>レーベル</td>
+		<td><%= @cd.label.cd_label %></td>
+	</tr>
+	<tr>
+		<td>ジャンル</td>
+		<td><%= @cd.genre.cd_genre %></td>
+	</tr>
+	<tr>
+		<td>ディスク</td>
+		<td><%= @cd.disc %></td>
+	</tr>
+	<tr>
+		<td>在庫数</td>
+		<td><%= @cd.stock %></td>
+	</tr>
+	<tr>
+		<td>管理人から一言</td>
+		<td><%= @cd.recommendedgit %></td>
+	</tr>
+</table>
 
-	</ul>
+
+<td><%= link_to "編集", edit_admins_cd_path(@cd.id) %></td>
+<td><%= link_to "削除", admins_cd_path(@cd.id), method: :delete, data: { confirm: '削除しますか?' } %></td>
+<td><%= link_to "戻る", admins_cds_path %></td>

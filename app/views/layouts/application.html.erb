@@ -60,7 +60,7 @@
          <li>メールアドレス</li>
          <li>電話番号</li>
        </ul>
-       <%= button_to "退会", user_registration_path, method: :delete, "data-confirm" => "削除しますか?" %>
+       <%= link_to "退会", user_registration_path, method: :delete, "data-confirm" => "削除しますか?" %>
        </li>
        <% else %>
        <h4>会社概要</h4>
