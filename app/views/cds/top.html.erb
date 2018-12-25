@@ -8,7 +8,7 @@
 
 
 	<% @cd.each do |cd| %>
-	<%= attachment_image_tag cd, :jacket_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+	<%= attachment_image_tag cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %>
 	<h4><%= cd.recommendedgit %></h4>
 	<ul>
 		<li>
