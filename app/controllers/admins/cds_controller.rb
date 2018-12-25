@@ -18,7 +18,6 @@ class Admins::CdsController < ApplicationController
 
 	def edit
 		@cd = Cd.find(params[:id])
-
 	end
 
 	def create
