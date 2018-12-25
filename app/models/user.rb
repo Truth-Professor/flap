@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+		has_many :carts
+
 
 acts_as_paranoid
 

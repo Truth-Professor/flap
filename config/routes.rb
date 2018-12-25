@@ -16,17 +16,20 @@ devise_for :users, controllers: {
 resources :cds, only: [:top, :index, :index_genre, :show, :update]
 resources :favorites, only: [:create, :destroy]
 resources :comments, only: [:index, :edit, :create, :update, :destroy]
-resources :carts, only: [:index, :destroy]
+#resources :carts, only: [:index, :destroy]
 resources :orders, only: [:show, :create]
+get '/users/carts' => 'carts#index'
 resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
+#get '/users/carts' => 'carts#index'
+
+  post '/add_item' => 'carts#add_item'
+  post '/update_item' => 'carts#update_item'
+  delete '/delete_item' => 'carts#delete_item'
 namespace :admins do
       get '/cds/top' => 'cds#top'
   post '/cds/top' => 'cds#create'
   resources :users, only: [:index, :show, :edit, :update, :destroy]
   resources :cds, only: [:index, :show, :edit, :create, :update, :destroy]
-
-  resources :artists, only: [:new, :create]
-  resources :genres, only: [:new, :create]
 
   # delete '/users' => 'users#destroy'
   resources :artists, only: [:new, :create]
