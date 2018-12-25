@@ -1,0 +1,32 @@
+<h1>カート</h1>
+
+
+<% @cart_item.each do |c| %>
+
+<%= attachment_image_tag @cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %>
+
+<table>
+	<tbody>
+		<tr>
+			<td>商品名</td>
+			<td><%= c.cd.cd_title %></td>
+		</tr>
+		<tr>
+			<td>値段</td>
+			<td>¥<%= c.cd.price.to_s(:delimited, delimiter: ',') %></td>
+		</tr>
+		<tr>
+			<td>数量</td>
+			<td><%= c.product_num %>枚</td>
+		</tr>
+		<tr>
+			<td>小計</td>
+			<td><% subtotal = c.product_num * c.cd.price %>
+				¥<%= subtotal.to_s(:delimited, delimiter: ',') %>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<%= link_to "削除", delete_item_path(c.cd_id, c.cart_id) , method: :delete, data: {confirm: '削除してよろしいですか？'} %>
+<% end %>
+
