@@ -10,3 +10,4 @@ attachment :jacket_image
 
 
 end
+
