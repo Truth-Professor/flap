@@ -20,6 +20,7 @@ resources :comments, only: [:index, :edit, :create, :update, :destroy]
 resources :orders, only: [:show, :create]
 get '/users/carts' => 'carts#index'
 resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
+resources :cart_items, only: [:create, :destroy]
 #get '/users/carts' => 'carts#index'
 
   post '/add_item' => 'carts#add_item'

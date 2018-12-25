@@ -1,10 +1,21 @@
-<h1> CD詳細画面　</h1>
+<h1> CD詳細画面 </h1>
 
 <%= attachment_image_tag @cd, :jacket_image, :fill, 400, 400, fallback: "no_cd_image.jpg", :size => '400' %>
 <h3><%= @cd.cd_title %></h3>
 <p><%= @cd.artist.artist_name %> <%= @cd.label.cd_label %></p>
 
 <h5>￥<%= @cd.price %>円</h5>
+
+
+
+<%= form_for @cart_item, url: cart_items_path(@cd.id, current_user.carts.ids), method: :post do |f| %>
+<%= hidden_field :cd_id, @cd.id %>
+<%= f.select :product_num, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5],[6, 6],[7, 7], [8, 8], [9, 9], [10, 10]] %> 枚
+<%= f.submit "カートに入れる"%>
+<% end %>
+
+
+
 
 <h4>登録情報</h4>
 <table>
