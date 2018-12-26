@@ -3,10 +3,10 @@
 
 <% @cart_items.each do |c| %>
 
-<%= attachment_image_tag @cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %>
-
 <table>
 	<tbody>
+		<p><%= attachment_image_tag @cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %></p>
+
 		<tr>
 			<td>商品名</td>
 			<td><%= c.cd.cd_title %></td>
@@ -27,6 +27,14 @@
 		</tr>
 	</tbody>
 </table>
+
 <%= link_to "削除", cart_item_path(c) , method: :delete, data: {confirm: '削除してよろしいですか？'} %>
 <% end %>
+
+<%= form_for @order, url: create_order_path, method: :post do |f| %>
+<%= f.submit "購入へ進む"%>
+<% end %>
+
+
+
 

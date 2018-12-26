@@ -1,11 +1,6 @@
 <div>
 	<h1>商品一覧</h1>
 
-	<h2>管理人のオススメ！</h2>
-
-
-	<h2>CD一覧</h2>
-
 
 	<% @cd.each do |cd| %>
 	<%= attachment_image_tag cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %>
