@@ -29,7 +29,7 @@
          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
        </li>
 
-       <P><%= link_to "Cart", user_cart_path_url(current_user.carts[0].id) %></P>
+       <P><%= link_to "Cart", user_cart_path(current_user.carts) %></P>
 
        <p><%= current_user.name_kanji %></p>
 

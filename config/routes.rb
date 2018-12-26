@@ -18,7 +18,7 @@ resources :favorites, only: [:create, :destroy]
 resources :comments, only: [:index, :edit, :create, :update, :destroy]
 #resources :carts, only: [:index, :destroy]
 resources :orders, only: [:show, :create]
-get '/users/carts/:id' => 'carts#show',as: "user_cart_path"
+get '/users/carts/:id' => 'carts#show',as: "user_cart"
 resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
 resources :cart_items, only: [:create, :destroy]
 #get '/users/carts' => 'carts#index'
