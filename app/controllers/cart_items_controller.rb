@@ -14,8 +14,8 @@ before_action :authenticate_user!, only: [:create, :destroy]
 	end
 
 	def destroy
-		cart_item = CartItem.find_by(cart_id: params[:cart_id], cd_id: params[:cd_id])
-		cart_item.destroy
+		cart = CartItem.find(params[:id])
+		cart.destroy
 
 		redirect_to user_cart_path(current_user.carts)
 	end
