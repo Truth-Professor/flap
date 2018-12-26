@@ -27,6 +27,6 @@
 		</tr>
 	</tbody>
 </table>
-<%= link_to "削除", cart_item_path(c.cd_id, c.cart_id) , method: :delete, data: {confirm: '削除してよろしいですか？'} %>
+<%= link_to "削除", cart_item_path(c) , method: :delete, data: {confirm: '削除してよろしいですか？'} %>
 <% end %>
 
