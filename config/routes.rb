@@ -17,8 +17,11 @@ resources :cds, only: [:top, :index, :index_genre, :show, :update]
 resources :favorites, only: [:create, :destroy]
 resources :comments, only: [:index, :edit, :create, :update, :destroy]
 #resources :carts, only: [:index, :destroy]
-resources :orders, only: [:show, :create]
+#resources :orders, only: [:show, :create]
 get '/users/carts/:id' => 'carts#show',as: "user_cart"
+post '/users/carts/:id' => 'carts#create'
+post  'orders/:id' => 'orders#create',as: "create_order"
+get  'orders/:id' => 'orders#show',as: "user_order"
 resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
 resources :cart_items, only: [:create, :destroy]
 #get '/users/carts' => 'carts#index'

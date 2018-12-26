@@ -1,2 +1,29 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<h1>購入ページ</h1>
+
+<% @cart.each do |cart| %>
+	<% cart.cart_items.each do |cart_item| %>
+
+		<%= attachment_image_tag cart_item.cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %>
+		<table>
+			<tr>
+				<td>
+					<%= link_to cart_item.cd.cd_title, cd_path(cart_item.cd.id) %>
+				</td>
+				<td>
+					<%= cart_item.cd.artist.artist_name %>
+				</td>
+				<td>
+					<%= cart_item.cd.price %>円
+				</td>
+				<td>
+					<%= cart_item.product_num %>枚
+				</td>
+			</tr>
+		</table>
+
+	<% end %>
+<% end %>
+
+
+
+<p><%= link_to "戻る", user_cart_path(current_user.carts) %></p>
