@@ -1,7 +1,7 @@
 <h1>カート</h1>
 
 
-<% @cart_item.each do |c| %>
+<% @cart_items.each do |c| %>
 
 <%= attachment_image_tag @cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %>
 
@@ -27,6 +27,6 @@
 		</tr>
 	</tbody>
 </table>
-<%= link_to "削除", delete_item_path(c.cd_id, c.cart_id) , method: :delete, data: {confirm: '削除してよろしいですか？'} %>
+<%= link_to "削除", cart_item_path(c.cd_id, c.cart_id) , method: :delete, data: {confirm: '削除してよろしいですか？'} %>
 <% end %>
 

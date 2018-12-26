@@ -1,4 +1,6 @@
 class CartItemsController < ApplicationController
+before_action :authenticate_user!, only: [:create, :destroy]
+
 
 	def create
 		# @cd = Cd.find(params[:cd_id])
@@ -8,14 +10,14 @@ class CartItemsController < ApplicationController
 		@cart_item.cart_id = params[:cart_id]
 		@cart_item.product_num = params[:cart_item][:product_num]
 		@cart_item.save
-		redirect_to user_cart_path_url(current_user.carts[0].id)
+		redirect_to user_cart_path(current_user.carts)
 	end
 
 	def destroy
 		cart_item = CartItem.find_by(cart_id: params[:cart_id], cd_id: params[:cd_id])
 		cart_item.destroy
 
-		redirect_to user_cart_path(current_user.cart)
+		redirect_to user_cart_path(current_user.carts)
 	end
 
 	private
