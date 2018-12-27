@@ -1,7 +1,7 @@
 <h1>購入ページ</h1>
 
-<% @cart.each do |cart| %>
-	<% cart.cart_items.each do |cart_item| %>
+<%# @cart.each do |cart| %>
+	<% @cart.cart_items.each do |cart_item| %>
 
 		<%= attachment_image_tag cart_item.cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %>
 		<table>
@@ -22,8 +22,7 @@
 		</table>
 
 	<% end %>
-<% end %>
-
+<%# end %>
 
 
 

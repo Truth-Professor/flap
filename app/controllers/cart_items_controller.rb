@@ -9,15 +9,15 @@ before_action :authenticate_user!, only: [:create, :destroy]
 		@cart_item.cd_id = params[:cd_id]
 		@cart_item.cart_id = params[:cart_id]
 		@cart_item.product_num = params[:cart_item][:product_num]
-		@cart_item.save
-		redirect_to user_cart_path(current_user.carts)
+		@cart_item.save!
+		redirect_to user_cart_path(current_user.carts.last)
 	end
 
 	def destroy
 		cart = CartItem.find(params[:id])
 		cart.destroy
 
-		redirect_to user_cart_path(current_user.carts)
+		redirect_to user_cart_path(current_user.carts.last)
 	end
 
 	private
