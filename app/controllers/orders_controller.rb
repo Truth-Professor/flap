@@ -6,8 +6,8 @@ class OrdersController < ApplicationController
 
   def create
   	 @order = Order.new
-	 @order.cart_id = params[:cart_id]
-	 @order.save
-	 redirect_to user_order_path(:order_id)
+	 　@order.cart_id = params[:cart_id]
+	 　@order.save
+	 　redirect_to user_order_path(:order_id)
   end
 end

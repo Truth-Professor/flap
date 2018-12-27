@@ -1,25 +1,28 @@
 <div>
-	<h1>商品一覧</h1>
+
+		<h1> 商品一覧 </h1>
 
 
-	<% @cd.each do |cd| %>
-	<%= attachment_image_tag cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %>
-	<h4><%= cd.recommendedgit %></h4>
-	<ul>
-		<li>
-			<%= link_to cd.cd_title, cd_path(cd.id) %>
-		</li>
-		<li>
-			<%= cd.artist.artist_name %>
-		</li>
-		<li>
-			<%= cd.price %>円
-		</li>
-		<li>
-			<%= cd.stock %>個
-		</li>
-	</ul>
+<%= search_form_for @search, url: root_path  do |f| %>
+  <div class="form-group">
+    <%= f.label :cd_title_cont, "🔍" %>
+    <%= f.text_field :cd_title_cont, class: "form-control" %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
 
-	<% end %>
+<table>
+
+<% if @result.any? %>
+  <%= render @result %>
+<% end %>
+
+<% if @result.nil? %>
+  <ul class="cds">
+    <%= render @cds %>
+  </ul>
+<% end %>
+</table>
+
 
 </div>

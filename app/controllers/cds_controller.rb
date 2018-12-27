@@ -1,4 +1,4 @@
-class CdsController < ApplicationController
+class CdsController < ApplicationController 
   def top
     @cd = Cd.all
 
@@ -8,6 +8,9 @@ class CdsController < ApplicationController
         Cart.create(user_id: current_user.id)
       end
     end
+    @cds  = Cd.paginate(page: params[:page])
+    @search = Cd.ransack(params[:q])
+    @result = @search.result
   end
 
   def index
