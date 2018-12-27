@@ -22,6 +22,8 @@ get '/users/carts/:id' => 'carts#show',as: "user_cart"
 post '/users/carts/:id' => 'carts#create'
 post  'orders/:id' => 'orders#create',as: "create_order"
 get  'orders/:id' => 'orders#show',as: "user_order"
+get 'users/historys' => 'histories#index',as: "create_history"
+post 'histories' => 'histories#create',as: "history_create"
 resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
 resources :cart_items, only: [:create, :destroy]
 #get '/users/carts' => 'carts#index'
@@ -39,7 +41,6 @@ namespace :admins do
 
 end
 
-  get 'history' => 'users#history'
 
   get 'index_genre' => 'cds#index_genre'
 

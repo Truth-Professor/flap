@@ -13,16 +13,15 @@
 
 <table>
 
-<% if @result.any? %>
-  <%= render @result %>
-<% end %>
 
-<% if @result.nil? %>
+
+
   <ul class="cds">
     <%= render @cds %>
   </ul>
-<% end %>
+
 </table>
 
+<%= paginate @cds %>
 
 </div>
