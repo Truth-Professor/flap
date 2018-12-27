@@ -14,8 +14,10 @@ class OrdersController < ApplicationController
 
   def create
   	 @order = Order.new
+
 	 @order.cart_id = params[:cart_id]
 	 @order.save
 	 redirect_to user_order_path(params[:cart_id])
+
   end
 end
