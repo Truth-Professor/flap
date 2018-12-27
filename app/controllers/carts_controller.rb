@@ -4,6 +4,7 @@ class CartsController < ApplicationController
 		@cart = Cart.where(user_id: current_user.id).last
 		@cart_items = @cart.cart_items
 		@cart = Cart.new
+
 		@order = Order.new
 	end
 

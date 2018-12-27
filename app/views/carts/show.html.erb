@@ -1,39 +1,39 @@
 <h1>カート</h1>
 
-
-<% @cart_items.each do |c| %>
+<% @cart_items.each do |cart_item| %>
 
 <table>
 	<tbody>
-		<p><%= attachment_image_tag @cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %></p>
+		<p><%= attachment_image_tag cart_item.cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200' %></p>
 
 		<tr>
 			<td>商品名</td>
-			<td><%= c.cd.cd_title %></td>
+			<td><%= cart_item.cd.cd_title %></td>
 		</tr>
 		<tr>
 			<td>値段</td>
-			<td>¥<%= c.cd.price.to_s(:delimited, delimiter: ',') %></td>
+			<td>¥<%= cart_item.cd.price.to_s(:delimited, delimiter: ',') %></td>
 		</tr>
 		<tr>
 			<td>数量</td>
-			<td><%= c.product_num %>枚</td>
+			<td><%= cart_item.product_num %>枚</td>
 		</tr>
 		<tr>
 			<td>小計</td>
-			<td><% subtotal = c.product_num * c.cd.price %>
+			<td><% subtotal = cart_item.product_num * cart_item.cd.price %>
 				¥<%= subtotal.to_s(:delimited, delimiter: ',') %>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
-<%= link_to "削除", cart_item_path(c) , method: :delete, data: {confirm: '削除してよろしいですか？'} %>
+<%= link_to "削除", cart_item_path(cart_item) , method: :delete, data: {confirm: '削除してよろしいですか？'} %>
 <% end %>
 
 <%= form_for @order, url: create_order_path, method: :post do |f| %>
 <%= f.submit "購入へ進む"%>
 <% end %>
+
 
 
 
