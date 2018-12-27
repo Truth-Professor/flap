@@ -9,11 +9,12 @@ class CartsController < ApplicationController
 	end
 
 	def create
-		@cart = Cart.new
-		@cart.cart_id = params[:cart_id]
-		@cart.save
-
-		redirect_to user_order_path(current_user.orders)
+		if Cart.exists?(user_id: current_user.id)
+			@cart = Cart.new
+			@cart.cart_id = params[:cart_id]
+			@cart.save
+			redirect_to user_order_path(current_user.orders)
+		end
 	end
 
 	def destroy

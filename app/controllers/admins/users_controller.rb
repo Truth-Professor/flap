@@ -1,8 +1,10 @@
 class Admins::UsersController < ApplicationController
 	layout 'admin'
 
+	PER = 2
+
 	def index
-		@users  = User.paginate(page: params[:page])
+		@users  = User.paginate(page: params[:PER])
         @search = User.ransack(params[:q])
         @result = @search.result
 	end
@@ -10,7 +12,7 @@ class Admins::UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@cds  = Cd.paginate(page: params[:page])
+		@cds  = Cd.paginate(page: params[:PER])
         @search = Cd.ransack(params[:q])
         @result = @search.result
 
