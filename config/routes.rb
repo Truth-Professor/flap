@@ -26,9 +26,6 @@ resources :users, only: [:index, :show, :edit, :create, :update, :destroy]
 resources :cart_items, only: [:create, :destroy]
 #get '/users/carts' => 'carts#index'
 
-  post '/add_item' => 'carts#add_item'
-  post '/update_item' => 'carts#update_item'
-  delete '/delete_item' => 'carts#delete_item'
 namespace :admins do
       get '/cds/top' => 'cds#top'
   post '/cds/top' => 'cds#create'
