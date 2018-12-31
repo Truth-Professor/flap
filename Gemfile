@@ -70,6 +70,9 @@ gem "paranoia"
 gem "rails-i18n"
 gem 'will_paginate'
 gem "ransack"
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
+
 
 
 gem 'pry-rails'
