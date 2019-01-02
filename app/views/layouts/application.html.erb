@@ -10,10 +10,10 @@
 </head>
 
 
-<header>
+<header style="background-color: #0000003b;">
  <div>
    <nav>
-     <h2><%= link_to "Flap", root_path %></h2>
+     <h2><%= link_to "　Flap", root_path, style:"font-size: 50px;" %></h2>
    </nav>
 
    <nav>
@@ -51,7 +51,7 @@
  <%= yield %>
 </body>
 
-<footer>
+<footer style="background-color: #0000003b;">
   <% if user_signed_in? %>
        <h4>会社概要</h4>
        <ul>
