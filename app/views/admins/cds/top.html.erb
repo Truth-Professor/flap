@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
 <h1> 商品の新規追加 </h1>
 <%= form_for (@cd), url: admins_cds_top_path do |f| %>
 
