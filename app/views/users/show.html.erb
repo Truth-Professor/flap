@@ -10,5 +10,5 @@
 		<li><%= @user.phone_number %></li>
 	</ul>
 	<p><%= link_to "ユーザー設定", edit_user_path(current_user) %></p>
-    <p><%= link_to "購入履歴", history_create_path(current_user) %></p>
+    <p><%= link_to "購入履歴", create_history_path(current_user) %></p>
 </div>
