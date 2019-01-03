@@ -1,3 +1,25 @@
 // Place all the styles related to the cds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cd{
+	display: inline-flex;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 5px;
+}
+.cdt{
+}
+
+.price{
+	color: #b90707;
+}
+.cd_title{
+	font-size: 15px;
+}
+
+ul{
+	list-style: none;
+}
