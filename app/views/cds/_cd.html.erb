@@ -1,14 +1,17 @@
+
 	<% @cds.first(1).each do %>
 	<div class="cd">
 		<span class="cdt">
 			<%= attachment_image_tag cd, :jacket_image, :fill, 200, 200, fallback: "no_cd_image.jpg", :size => '200', class: "img-circle" %>
 		<ul>
 			<li class="cd_title">
+
 				<%= link_to cd.cd_title, cd_path(cd.id) %>
 			</li>
 			<li>
 				<%= cd.artist.artist_name %>
 			</li>
+
 			<li class="price">
 				¥ <%= cd.price %>
 			</li>
