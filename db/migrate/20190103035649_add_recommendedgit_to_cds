@@ -1,0 +1,5 @@
+class AddRecommendedgitToCds < ActiveRecord::Migration[5.2]
+  def change
+    add_column :cds, :recommendedgit, :string
+  end
+end

@@ -21,22 +21,10 @@
 <%= f.select :disc, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"]]%>
 <h4>在庫数</h4>
 <%= f.text_field :stock %>
-
-
-<table class="table table-striped table-bordered table-hover">
-        <tbody>
-            <tr>
-               <th>ディスク1</th>
-               <th>Action</th>
-            </tr>
-            <%= f.nested_fields_for :songs, wrapper_tag: :tr do |q| %>
-                <td><%= q.text_field   :song_title,     class: 'form-control' %></td>
-                <td><%= q.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %></td>
-            <% end %>
-        </tbody>
-</table>
-      <%= f.add_nested_fields_link :roomtypes, 'Add new', class: 'btn btn-primary', role: 'button' %>
-
+<h4>管理人から一言</h4>
+<%= f.text_field :recommended %>
+<h4>曲名</h4>
+<%= f.text_area :song %>
 
 
 <p><%= f.submit '投稿' %></p>
