@@ -1,4 +1,5 @@
 class Admins::GenresController < ApplicationController
+	layout 'admin'
 		def new
 		@genre = Genre.new
 	end
