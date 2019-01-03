@@ -21,12 +21,13 @@ class Admins::CdsController < ApplicationController
 	end
 
 	def create
-  # ストロングパラメーターを使用
          @cd = Cd.new(cd_params)
-        # DBへ保存する
-         @cd.save
-        # 管理トップ画面へリダイレクト
-        redirect_to admins_cds_top_path
+
+         if @cd.save
+            flash[:notice] = "successfully"
+            redirect_to admins_cds_top_path
+        end
+
 
 	end
 

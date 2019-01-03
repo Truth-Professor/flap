@@ -15,7 +15,9 @@ class HistoriesController < ApplicationController
 	  	@history.product_num = cart_item.product_num
 	  	@history.price = cart_item.cd.price
 	  	@history.order_id = order.id
-	    @history.save
+      if@history.save
+             flash[:notice] = "ご購入ありがとうございました"
+      end
 	    cart_item.destroy
   	end
   	cart = Cart.create(user_id: current_user.id)
