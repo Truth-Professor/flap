@@ -15,3 +15,33 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.body_type{
+	margin-top: 180px;
+	margin-bottom: 200px;
+	background-color: #ffefd5;
+}
+
+.user_type{
+	padding-right: 20px;
+	color: #ffffff;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  background-color: #000000;
+}
+.footer_type{
+	color: #ffffff;
+}

@@ -1,30 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="center-block">
+
+			<h1>ユーザー設定</h1>
+			<%= form_for(current_user) do |f| %>
+
+			<%= f.attachment_field :profile_image, class: "user_image" %>
 
 
-<h1>ユーザー設定</h1>
-    <%= form_for(current_user) do |f| %>
+			<p>名前</p>
+			<%= f.text_field :name_kanji, class: "name_kanji" %>
 
-    <%= f.attachment_field :profile_image, class: "user_image" %>
+			<p>メールアドレス</p>
+			<%= f.text_field :email, class: "email" %>
 
+			<p>郵便番号</p>
+			<%= f.text_field :postal_code, class: "postal_code" %>
 
-	<p>名前</p>
-	<%= f.text_field :name_kanji, class: "name_kanji" %>
+			<p>住所</p>
+			<%= f.text_field :address, class: "address" %>
 
-	<p>メールアドレス</p>
-	<%= f.text_field :email, class: "email" %>
-
-	<p>郵便番号</p>
-	<%= f.text_field :postal_code, class: "postal_code" %>
-
-	<p>住所</p>
-	<%= f.text_field :address, class: "address" %>
-
-	<p>電話番号</p>
-	<%= f.text_field :phone_number, class: "phone_number" %>
+			<p>電話番号</p>
+			<%= f.text_field :phone_number, class: "phone_number" %>
 
 
 
-<p><%= f.submit '保存' %></p>
+			<p><%= f.submit '保存' %></p>
 
-<p><%= link_to "戻る", users_path(current_user) %></p>
+			<p><%= link_to "戻る", users_path(current_user) %></p>
 
-<% end %>
+			<% end %>
+
+		</div>
+	</div>
+</div>
+

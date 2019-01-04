@@ -35,6 +35,10 @@
         <td><%= f.select :disc, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"]]%></td>
     </tr>
     <tr>
+        <td>曲名</td>
+        <td><%= f.text_area :song %></td>
+    </tr>
+    <tr>
     	<td><%= f.submit '保存' %></td>
     </tr>
 <% end %>

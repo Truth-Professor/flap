@@ -1,14 +1,19 @@
-<div>
+<div class="container">
+	<div class="row">
+		<div class="center-block">
 	<h2>マイページ</h2>
 
-	<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+	<p  style="float:left"><%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "no_image.jpg", :size => '200' %></p>
+
 	<ul>
-		<li><%= @user.name_kanji %></li>
+		<li class="usertype"><%= @user.name_kanji %></li>
 		<li><%= @user.email %></li>
 		<li><%= @user.postal_code %></li>
 		<li><%= @user.address %></li>
 		<li><%= @user.phone_number %></li>
 	</ul>
-	<p><%= link_to "ユーザー設定", edit_user_path(current_user) %></p>
-    <p><%= link_to "購入履歴", create_history_path(current_user) %></p>
+	<p><%= link_to "ユーザー設定", edit_user_path(current_user), class: "btn btn-primary"  %></p>
+    <p><%= link_to "My  購入履歴", create_history_path(current_user), class: "btn btn-primary"  %></p>
+</div>
+</div>
 </div>
