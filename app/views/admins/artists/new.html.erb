@@ -7,4 +7,10 @@
 
 
  <%= a.submit '投稿' %>
+     <p>アーティスト覧</p>
+
+ <% @artists.each do |po| %>
+    <p><%= po.artist_name %></p>
+
+ <% end %>
 <% end %>
