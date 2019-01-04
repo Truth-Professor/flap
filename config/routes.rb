@@ -35,9 +35,9 @@ namespace :admins do
   resources :cds, only: [:index, :show, :edit, :create, :update, :destroy]
 
   # delete '/users' => 'users#destroy'
-  resources :artists, only: [:new, :create]
-  resources :genres, only: [:new, :create]
-  resources :labels, only: [:new, :create]
+  resources :artists, only: [:new, :create, :destroy]
+  resources :genres, only: [:new, :create, :destroy]
+  resources :labels, only: [:new, :create, :destroy]
 
 end
 

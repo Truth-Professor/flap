@@ -7,4 +7,9 @@
 
 
  <%= a.submit '投稿' %>
+
+ <% @genres.each do |po| %>
+    <p>ジャンル一覧</p>
+    <span><%= po.cd_genre %></span>
+ <% end %>
 <% end %>
